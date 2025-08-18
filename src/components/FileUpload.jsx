@@ -49,7 +49,7 @@ export default function FileUpload() {
     params.set("threshold", threshold.toString());
 
     try {
-      const res = await axios.post(`http://localhost:5000/match?${params.toString()}`, formData, {
+      const res = await axios.post(`https://kenyagazettescannerb.onrender.com/match?${params.toString()}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setLastInsertCount(res.data?.insertedCount ?? null);
@@ -64,7 +64,7 @@ export default function FileUpload() {
   const handleClear = async () => {
     if (!confirm("Clear ALL stored matches?")) return;
     try {
-      await axios.post("http://localhost:5000/clear-records");
+      await axios.post("https://kenyagazettescannerb.onrender.com/clear-records");
       await fetchRecords();
       setLastInsertCount(null);
     } catch {
