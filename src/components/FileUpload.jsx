@@ -3,7 +3,7 @@ import React, { useState, useMemo } from "react";
 import axios from "axios";
 import { CSVLink } from "react-csv";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://scannerb.onrender.com/api";
 const ROWS_PER_PAGE = 50;
 
 export default function FileUpload() {
